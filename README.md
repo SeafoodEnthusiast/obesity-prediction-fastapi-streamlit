@@ -75,21 +75,26 @@ Two end-to-end test cases were run through the Streamlit app with the API runnin
 | 1 | Male, 20 years, 1.73 m, 67 kg | 22.4 | Normal_Weight |
 | 2 | Female, 55 years, 1.56 m, 72 kg | 29.6 | Overweight_Level_I |
 
+![Test case 1](TestCase1.jpg)
+![Test case 2](TestCase2.jpg)
 
 ## Repository Structure
 
 ```
-├── ObesityDataSet2.csv        # Raw dataset
-├── modelling.ipynb            # EDA, preprocessing, model comparison, saving artifacts
-├── api.py                     # FastAPI backend (POST /predict)
-├── app.py                     # Streamlit front end
-├── model/
-│   ├── best_model_random_forest.pkl
-│   ├── scaler.pkl
-│   ├── label_encoders.pkl
-│   └── target_encoder.pkl
-├── screenshots/               # Test case results
-├── requirements.txt
+├── ObesityDataSet2.csv                                                         # Raw dataset
+├── UASModelDeploymentNo1_AlessandroMorenoLawadinata_2702267672 (1).ipynb       # EDA, preprocessing, model comparison, saving artifacts
+├── UASModelDeploymentNo2_AlessandroMorenoLawadinata_2702267672.py              # FastAPI backend (POST /predict)
+├── UASModelDeploymentNo3_AlessandroMorenoLawadinata_2702267672.py              # Streamlit front end
+├── best_model_random_forest.pkl                                                # Selected model
+├── scaler.pkl                                                                  # Fitted StandardScaler
+├── label_encoders.pkl                                                          # Fitted encoders for categorical features
+├── target_encoder.pkl                                                          # Fitted encoder for the target label
+├── TestCase1.jpg                                                               # Test case screenshots
+├── TestCase2.jpg
+├── UASModelDeploymentESSAY_AlessandroMorenoLawadinata_2702267672.pdf           # Testing plan and drift essay
+├── UASModelDeploymentHasilTestCaseStreamlit_AlessandroMorenoLawadinata_2702267672.pdf
+├── UASModelDeploymentLinkVideo_AlessandroMorenoLawadinata_2702267672.pdf
+├── requirements.txt                                                            # Dependencies
 ├── LICENSE
 └── README.md
 ```
@@ -102,16 +107,16 @@ cd obesity-prediction-fastapi-streamlit
 pip install -r requirements.txt
 ```
 
-Start the backend first, from the repository root so the `model/` folder is found:
+Start the backend first, from the repository root so the `.pkl` files are found:
 
 ```bash
-uvicorn api:app --reload
+uvicorn UASModelDeploymentNo2_AlessandroMorenoLawadinata_2702267672:app --reload
 ```
 
 Then, in a second terminal, start the front end:
 
 ```bash
-streamlit run app.py
+streamlit run UASModelDeploymentNo3_AlessandroMorenoLawadinata_2702267672.py
 ```
 
 The Streamlit app expects the API at `http://localhost:8000`. The interactive API docs are at `http://localhost:8000/docs`.
