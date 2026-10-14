@@ -75,8 +75,6 @@ Two end-to-end test cases were run through the Streamlit app with the API runnin
 | 1 | Male, 20 years, 1.73 m, 67 kg | 22.4 | Normal_Weight |
 | 2 | Female, 55 years, 1.56 m, 72 kg | 29.6 | Overweight_Level_I |
 
-![Test case 1](screenshots/TestCase1.jpg)
-![Test case 2](screenshots/TestCase2.jpg)
 
 ## Repository Structure
 
